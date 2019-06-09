@@ -41,8 +41,7 @@ public class Runner {
   private String repositorySlug;
   private String username;
   private String password;
-  private String personalAccessToken;
-  private int commentOnlyChangedContentContext;
+  private boolean shouldCommentOnlyChangedContent;
   private Integer maxNumberOfViolations;
 
   public void main(final String args[]) throws Exception {
@@ -100,8 +99,12 @@ public class Runner {
             .defaultValue("")
             .description("You can create an 'application password' in Bitbucket to use here.")
             .build();
-    final Argument<Integer> commentOnlyChangedContentContextArg =
-        integerArgument("-comment-only-changed-content-context", "-coccc").defaultValue(5).build();
+    final Argument<Boolean> shouldCommentOnlyChangedContentArg =
+        booleanArgument("-comment-only-changed-content", "-cocc")
+            .defaultValue(true)
+            .description(
+                "True if only changed parts of the changed files should be commented. False if all findings on the changed files should be commented.")
+            .build();
     final Argument<Integer> maxNumberOfViolationsArg =
         integerArgument("-max-number-of-violations", "-max")
             .defaultValue(Integer.MAX_VALUE)
@@ -123,7 +126,7 @@ public class Runner {
                   repositorySlugArg, //
                   usernameArg, //
                   passwordArg, //
-                  commentOnlyChangedContentContextArg, //
+                  shouldCommentOnlyChangedContentArg, //
                   maxNumberOfViolationsArg //
                   ) //
               .parse(args);
@@ -136,12 +139,12 @@ public class Runner {
       this.keepOldComments = parsed.get(keepOldCommentsArg);
       this.commentTemplate = parsed.get(commentTemplateArg);
 
-      pullRequestId = parsed.get(pullRequestIdArg);
+      this.pullRequestId = parsed.get(pullRequestIdArg);
       this.workspace = parsed.get(workspaceArg);
       this.repositorySlug = parsed.get(repositorySlugArg);
       this.username = parsed.get(usernameArg);
       this.password = parsed.get(passwordArg);
-      this.commentOnlyChangedContentContext = parsed.get(commentOnlyChangedContentContextArg);
+      this.shouldCommentOnlyChangedContent = parsed.get(shouldCommentOnlyChangedContentArg);
       this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
 
       if (parsed.wasGiven(showDebugInfo)) {
@@ -193,7 +196,7 @@ public class Runner {
           .withViolations(allParsedViolations) //
           .withCreateCommentWithAllSingleFileComments(createCommentWithAllSingleFileComments) //
           .withCreateSingleFileComment(createSingleFileComments) //
-          .withCommentOnlyChangedContentContext(commentOnlyChangedContentContext) //
+          .withShouldCommentOnlyChangedContent(shouldCommentOnlyChangedContent) //
           .withKeepOldComments(keepOldComments) //
           .withCommentTemplate(commentTemplate) //
           .withMaxNumberOfViolations(maxNumberOfViolations) //
@@ -240,11 +243,9 @@ public class Runner {
         + ", username="
         + username
         + ", password="
-        + password
-        + ", personalAccessToken="
-        + personalAccessToken
-        + ", commentOnlyChangedContentContext="
-        + commentOnlyChangedContentContext
+        + (password != null)
+        + ", shouldCommentOnlyChangedContent="
+        + shouldCommentOnlyChangedContent
         + ", maxNumberOfViolations="
         + maxNumberOfViolations
         + "]";

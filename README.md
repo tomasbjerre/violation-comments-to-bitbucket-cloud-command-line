@@ -114,8 +114,14 @@ Missing a format? Open an issue [here](https://github.com/tomasbjerre/violations
 # Usage
 
 ```shell
--comment-only-changed-content-context, -coccc <integer> <integer>: -2,147,483,648 to 2,147,483,647
-                                                        Default: 5
+-comment-only-changed-content, -cocc <boolean>          True if only changed 
+                                                        parts of the changed files 
+                                                        should be commented. False if 
+                                                        all findings on the 
+                                                        changed files should be 
+                                                        commented.
+                                                        <boolean>: true or false
+                                                        Default: true
 -comment-template <string>                              https://github.
                                                         com/tomasbjerre/violation-comments-lib
                                                         <string>: any string
