@@ -3,7 +3,7 @@ apply plugin: 'java'
 project.ext.tags = ['violation', 'static code analysis', 'Checkstyle', 'CPPLint', 'CPPCheck', 'CSSLint', 'Findbugs', 'Flake8', 'PyLint', 'Pep8', 'Mccabe', 'PyFlakes', 'JSHint', 'Lint', 'PerlCritic', 'PMD', 'ReSharper', 'XMLLint']
 group = 'se.bjurr.violations'
 description = 'Report static code analysis to Bitbucket Cloud.'
-project.ext.useShadowJar = true
+project.ext.useShadowJar = false
 project.ext.syncCentral = false
 
 jar {
