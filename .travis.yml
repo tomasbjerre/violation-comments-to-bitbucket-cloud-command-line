@@ -1,0 +1,10 @@
+sudo: false
+language: java
+jdk:
+  - oraclejdk11
+script:
+  - ./gradlew build --stacktrace -i
+after_script:
+  - find -name TEST* -exec cat {} \;
+notifications:
+  email: false
