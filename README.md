@@ -23,6 +23,10 @@ npx violation-comments-to-bitbucket-cloud-command-line \
  -v "JSHINT" "." ".*jshint/report\.xml$" "JSHint"
 ```
 
+Create **application passwords** like this: https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html
+
+If using it from **Jenkins**, you may integrate with Bitbucket Cloud with this plugin: https://github.com/jenkinsci/generic-webhook-trigger-plugin
+
 **You must perform the merge before build**. If you don't perform the merge, the reported violations will refer to other lines then those in the pull request. The merge can be done with a shell script like this.
 
 ```
@@ -138,7 +142,10 @@ ccwasfc <boolean>                                       Default: false
                                                         Default: 2,147,483,647
 -password, -p <string>                                  You can create an 
                                                         'application password' in Bitbucket 
-                                                        to use here.
+                                                        to use here. See https:
+                                                        //confluence.atlassian.
+                                                        com/bitbucket/app-passwords-828781300.
+                                                        html
                                                         <string>: any string
                                                         Default: 
 -pull-request-id, -prid <string>                        <string>: any string [Required]

@@ -97,7 +97,8 @@ public class Runner {
     final Argument<String> passwordArg =
         stringArgument("-password", "-p")
             .defaultValue("")
-            .description("You can create an 'application password' in Bitbucket to use here.")
+            .description(
+                "You can create an 'application password' in Bitbucket to use here. See https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html")
             .build();
     final Argument<Boolean> shouldCommentOnlyChangedContentArg =
         booleanArgument("-comment-only-changed-content", "-cocc")
