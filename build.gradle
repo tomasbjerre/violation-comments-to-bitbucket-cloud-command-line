@@ -33,6 +33,8 @@ dependencies {
 }
 
 shadowJar {
+ mergeServiceFiles()
+
  relocate 'org', 'org'
  relocate 'com', 'com'
  relocate 'io', 'io'
