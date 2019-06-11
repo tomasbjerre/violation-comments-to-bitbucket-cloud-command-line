@@ -27,19 +27,24 @@ apply from: project.buildscript.classLoader.getResource('violations.gradle').toU
 
 
 dependencies {
- compile 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:1.7'
+ compile 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:1.8'
  compile 'se.softhouse:jargo:0.1.1'
  compile 'org.slf4j:slf4j-simple:1.8.0-beta2'
 }
 
+task copyDependencies(type: Copy) {
+ from configurations.default
+ into 'build/libs'
+}
+
 shadowJar {
  mergeServiceFiles() {
-  include '*'
+  exclude 'META-INF/services/*'
  }
 
- relocate 'org', 'shadow.org'
- relocate 'com', 'shadow.com'
- relocate 'io', 'shadow.io'
- relocate 'javax', 'shadow.javax'
+ relocate 'org', 'org'
+ relocate 'javax', 'javax'
+ relocate 'com', 'com'
  relocate 'se', 'se'
+ relocate 'io', 'io'
 }
