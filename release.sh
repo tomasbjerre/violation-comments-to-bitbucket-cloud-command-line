@@ -7,7 +7,7 @@ git reset --hard HEAD~1
 ./publish-npm.sh
 git pull
 
-./gradlew build
+./gradlew build gitChangelogTask
 git commit -a --amend --no-edit
 git push -f
 
