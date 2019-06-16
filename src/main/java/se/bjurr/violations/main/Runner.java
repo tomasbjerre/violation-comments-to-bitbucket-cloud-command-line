@@ -42,6 +42,7 @@ public class Runner {
   private String username;
   private String password;
   private boolean shouldCommentOnlyChangedContent;
+  private boolean shouldCommentOnlyChangedFiles;
   private Integer maxNumberOfViolations;
 
   public void main(final String args[]) throws Exception {
@@ -106,6 +107,12 @@ public class Runner {
             .description(
                 "True if only changed parts of the changed files should be commented. False if all findings on the changed files should be commented.")
             .build();
+    final Argument<Boolean> shouldCommentOnlyChangedFilesArg =
+        booleanArgument("-comment-only-changed-files", "-cocf")
+            .defaultValue(true)
+            .description(
+                "True if only changed files should be commented. False if all findings should be commented.")
+            .build();
     final Argument<Integer> maxNumberOfViolationsArg =
         integerArgument("-max-number-of-violations", "-max")
             .defaultValue(Integer.MAX_VALUE)
@@ -128,6 +135,7 @@ public class Runner {
                   usernameArg, //
                   passwordArg, //
                   shouldCommentOnlyChangedContentArg, //
+                  shouldCommentOnlyChangedFilesArg, //
                   maxNumberOfViolationsArg //
                   ) //
               .parse(args);
@@ -146,6 +154,7 @@ public class Runner {
       this.username = parsed.get(usernameArg);
       this.password = parsed.get(passwordArg);
       this.shouldCommentOnlyChangedContent = parsed.get(shouldCommentOnlyChangedContentArg);
+      this.shouldCommentOnlyChangedFiles = parsed.get(shouldCommentOnlyChangedFilesArg);
       this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
 
       if (parsed.wasGiven(showDebugInfo)) {
@@ -198,6 +207,7 @@ public class Runner {
           .withCreateCommentWithAllSingleFileComments(createCommentWithAllSingleFileComments) //
           .withCreateSingleFileComment(createSingleFileComments) //
           .withShouldCommentOnlyChangedContent(shouldCommentOnlyChangedContent) //
+          .withShouldCommentOnlyChangedFiles(shouldCommentOnlyChangedFiles) //
           .withKeepOldComments(keepOldComments) //
           .withCommentTemplate(commentTemplate) //
           .withMaxNumberOfViolations(maxNumberOfViolations) //
