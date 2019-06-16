@@ -3,6 +3,20 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.8
+### No issue
+
+**junit**
+
+
+[6ea030cd434ef3e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/6ea030cd434ef3e) Tomas Bjerre *2019-06-16 16:27:29*
+
+**changelog**
+
+
+[744b51383a73781](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/744b51383a73781) Tomas Bjerre *2019-06-15 19:17:35*
+
+
 ## 1.7
 ### No issue
 
