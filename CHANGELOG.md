@@ -3,6 +3,28 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.11
+### GitHub #80   
+
+**Add support for sonar issue report formats >= v7.5 tomasbjerre/violations-lib**
+
+
+[18130d9e88bf2a6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/18130d9e88bf2a6) Tomas Bjerre *2020-01-03 07:12:20*
+
+
+### No issue
+
+**doc**
+
+
+[58c2e05f3e001ac](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/58c2e05f3e001ac) Tomas Bjerre *2019-10-09 17:07:58*
+
+**Create FUNDING.yml**
+
+
+[a998417dee6704c](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/a998417dee6704c) Tomas Bjerre *2019-09-28 07:03:35*
+
+
 ## 1.10
 ### No issue
 
