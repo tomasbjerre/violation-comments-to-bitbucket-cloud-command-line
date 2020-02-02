@@ -3,6 +3,16 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.12
+### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
+
+**Changing username to workspace for repositories**
+
+ * tomasbjerre/violation-comments-to-bitbucket-cloud-lib 
+
+[083d9c4d270b59b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/083d9c4d270b59b) Tomas Bjerre *2020-02-02 19:12:45*
+
+
 ## 1.11
 ### GitHub #80   
 
