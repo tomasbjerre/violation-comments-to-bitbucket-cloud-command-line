@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.13
+### GitHub #82   
+
+**CPPCheckParser with auto closed <error/> tags tomasbjerre/violations-lib**
+
+
+[387ef2d206af609](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/387ef2d206af609) Tomas Bjerre *2020-02-03 16:19:30*
+
+
 ## 1.12
 ### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
 
