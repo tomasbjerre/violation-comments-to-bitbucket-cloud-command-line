@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.14
+### No issue
+
+**Switched from using username to workspace while removing comment**
+
+
+[ca233f02866aa62](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ca233f02866aa62) Tomas Bjerre *2020-02-16 16:49:00*
+
+
 ## 1.13
 ### GitHub #82   
 
