@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.15
+### No issue
+
+**Correcting lines in comments**
+
+
+[b679db68b6b10f6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/b679db68b6b10f6) Tomas Bjerre *2020-02-16 16:55:38*
+
+
 ## 1.14
 ### No issue
 
