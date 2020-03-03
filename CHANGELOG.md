@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.16
+### GitHub #84   
+
+**XUnit tomasbjerre/violations-lib**
+
+
+[f7c5cf92c6afaa3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/f7c5cf92c6afaa3) Tomas Bjerre *2020-03-03 16:47:57*
+
+
 ## 1.15
 ### No issue
 
