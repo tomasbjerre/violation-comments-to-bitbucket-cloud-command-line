@@ -12,13 +12,15 @@ import static se.softhouse.jargo.CommandLineParser.withArguments;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import se.bjurr.violations.comments.bitbucketcloud.lib.ViolationCommentsToBitbucketCloudApi;
-import se.bjurr.violations.comments.lib.ViolationsLogger;
+import se.bjurr.violations.lib.FilteringViolationsLogger;
+import se.bjurr.violations.lib.ViolationsLogger;
 import se.bjurr.violations.lib.model.SEVERITY;
 import se.bjurr.violations.lib.model.Violation;
 import se.bjurr.violations.lib.reports.Parser;
@@ -44,6 +46,7 @@ public class Runner {
   private boolean shouldCommentOnlyChangedContent;
   private boolean shouldCommentOnlyChangedFiles;
   private Integer maxNumberOfViolations;
+  private boolean showDebugInfo;
 
   public void main(final String args[]) throws Exception {
     final Argument<?> helpArgument = helpArgument("-h", "--help");
@@ -156,8 +159,8 @@ public class Runner {
       this.shouldCommentOnlyChangedContent = parsed.get(shouldCommentOnlyChangedContentArg);
       this.shouldCommentOnlyChangedFiles = parsed.get(shouldCommentOnlyChangedFilesArg);
       this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
-
-      if (parsed.wasGiven(showDebugInfo)) {
+      this.showDebugInfo = parsed.wasGiven(showDebugInfo);
+      if (this.showDebugInfo) {
         System.out.println(
             "Given parameters:\n"
                 + Arrays.asList(args)
@@ -173,44 +176,65 @@ public class Runner {
       System.exit(1);
     }
 
-    List<Violation> allParsedViolations = new ArrayList<>();
-    for (final List<String> configuredViolation : violations) {
+    ViolationsLogger violationsLogger =
+        new ViolationsLogger() {
+          @Override
+          public void log(final Level level, final String string) {
+            System.out.println(level + " " + string);
+          }
+
+          @Override
+          public void log(final Level level, final String string, final Throwable t) {
+            final StringWriter sw = new StringWriter();
+            t.printStackTrace(new PrintWriter(sw));
+            System.out.println(level + " " + string + "\n" + sw.toString());
+          }
+        };
+    if (!this.showDebugInfo) {
+      violationsLogger = FilteringViolationsLogger.filterLevel(violationsLogger);
+    }
+
+    Set<Violation> allParsedViolations = new TreeSet<>();
+    for (final List<String> configuredViolation : this.violations) {
       final String reporter = configuredViolation.size() >= 4 ? configuredViolation.get(3) : null;
-      final List<Violation> parsedViolations =
+      final Set<Violation> parsedViolations =
           violationsApi() //
+              .withViolationsLogger(violationsLogger) //
               .findAll(Parser.valueOf(configuredViolation.get(0))) //
               .inFolder(configuredViolation.get(1)) //
               .withPattern(configuredViolation.get(2)) //
               .withReporter(reporter) //
               .violations();
-      if (minSeverity != null) {
-        allParsedViolations = Filtering.withAtLEastSeverity(allParsedViolations, minSeverity);
+      if (this.minSeverity != null) {
+        allParsedViolations = Filtering.withAtLEastSeverity(allParsedViolations, this.minSeverity);
       }
       allParsedViolations.addAll(parsedViolations);
     }
 
-    System.out.println("PR: " + workspace + "/" + repositorySlug + "/" + pullRequestId);
+    System.out.println(
+        "PR: " + this.workspace + "/" + this.repositorySlug + "/" + this.pullRequestId);
     final ViolationCommentsToBitbucketCloudApi violationCommentsToBitbucketServerApi =
         new ViolationCommentsToBitbucketCloudApi();
     try {
-      if (!username.isEmpty()) {
+      if (!this.username.isEmpty()) {
         violationCommentsToBitbucketServerApi //
-            .withUsername(username) //
-            .withPassword(password);
+            .withUsername(this.username) //
+            .withPassword(this.password);
       }
 
       violationCommentsToBitbucketServerApi //
-          .withPullRequestId(pullRequestId) //
-          .withWorkspace(workspace) //
-          .withRepositorySlug(repositorySlug) //
+          .withPullRequestId(this.pullRequestId) //
+          .withWorkspace(this.workspace) //
+          .withRepositorySlug(this.repositorySlug) //
           .withViolations(allParsedViolations) //
-          .withCreateCommentWithAllSingleFileComments(createCommentWithAllSingleFileComments) //
-          .withCreateSingleFileComment(createSingleFileComments) //
-          .withShouldCommentOnlyChangedContent(shouldCommentOnlyChangedContent) //
-          .withShouldCommentOnlyChangedFiles(shouldCommentOnlyChangedFiles) //
-          .withKeepOldComments(keepOldComments) //
-          .withCommentTemplate(commentTemplate) //
-          .withMaxNumberOfViolations(maxNumberOfViolations) //
+          .withCreateCommentWithAllSingleFileComments(
+              this.createCommentWithAllSingleFileComments) //
+          .withCreateSingleFileComment(this.createSingleFileComments) //
+          .withShouldCommentOnlyChangedContent(this.shouldCommentOnlyChangedContent) //
+          .withShouldCommentOnlyChangedFiles(this.shouldCommentOnlyChangedFiles) //
+          .withKeepOldComments(this.keepOldComments) //
+          .withCommentTemplate(this.commentTemplate) //
+          .withMaxNumberOfViolations(this.maxNumberOfViolations) //
           .withViolationsLogger(
               new ViolationsLogger() {
                 @Override
@@ -234,31 +258,31 @@ public class Runner {
   @Override
   public String toString() {
     return "Runner [violations="
-        + violations
+        + this.violations
         + ", createCommentWithAllSingleFileComments="
-        + createCommentWithAllSingleFileComments
+        + this.createCommentWithAllSingleFileComments
         + ", createSingleFileComments="
-        + createSingleFileComments
+        + this.createSingleFileComments
         + ", minSeverity="
-        + minSeverity
+        + this.minSeverity
         + ", keepOldComments="
-        + keepOldComments
+        + this.keepOldComments
         + ", commentTemplate="
-        + commentTemplate
+        + this.commentTemplate
         + ", pullRequestId="
-        + pullRequestId
+        + this.pullRequestId
         + ", projectKey="
-        + workspace
+        + this.workspace
         + ", repoSlug="
-        + repositorySlug
+        + this.repositorySlug
         + ", username="
-        + username
+        + this.username
         + ", password="
-        + (password != null)
+        + (this.password != null)
         + ", shouldCommentOnlyChangedContent="
-        + shouldCommentOnlyChangedContent
+        + this.shouldCommentOnlyChangedContent
         + ", maxNumberOfViolations="
-        + maxNumberOfViolations
+        + this.maxNumberOfViolations
         + "]";
   }
 }
