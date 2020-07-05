@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.17
+### No issue
+
+**New: custom logging in violations-lib**
+
+
+[dff44a3f433062b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/dff44a3f433062b) Tomas Bjerre *2020-07-05 12:56:04*
+
+
 ## 1.16
 ### GitHub #84   
 
