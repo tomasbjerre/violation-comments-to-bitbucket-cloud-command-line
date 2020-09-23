@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.19
+### No issue
+
+**Allow Checkstyle reports with no line**
+
+
+[c028afb8acb8c8b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/c028afb8acb8c8b) Tomas Bjerre *2020-09-23 17:07:06*
+
+
 ## 1.18
 ### No issue
 
