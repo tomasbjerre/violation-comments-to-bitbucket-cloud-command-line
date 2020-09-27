@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket cloud command line.
 
+## 1.20
+### No issue
+
+**Find Security Bugs messages**
+
+
+[5342914ff47a452](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/5342914ff47a452) Tomas Bjerre *2020-09-27 17:38:33*
+
+
 ## 1.19
 ### No issue
 
