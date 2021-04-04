@@ -3,6 +3,15 @@
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
+## 1.26.0
+### No issue
+
+**new build script**
+
+
+[25dcfd862c0e537](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/25dcfd862c0e537) Tomas Bjerre *2021-04-04 18:30:23*
+
+
 ## 1.23.0
 ### No issue
 
