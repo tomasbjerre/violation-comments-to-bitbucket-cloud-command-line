@@ -1,7 +1,16 @@
 
- # Violation comments to bitbucket cloud command line changelog
+# violation-comments-to-bitbucket-cloud-command-line changelog
 
-Changelog of Violation comments to bitbucket cloud command line.
+Changelog of violation-comments-to-bitbucket-cloud-command-line.
+
+## 1.22.0
+### No issue
+
+**new build script**
+
+
+[1604e604c31f8e9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/1604e604c31f8e9) Tomas Bjerre *2021-04-04 16:36:56*
+
 
 ## 1.20
 ### No issue
@@ -80,7 +89,7 @@ Changelog of Violation comments to bitbucket cloud command line.
 
 **Changing username to workspace for repositories**
 
- * tomasbjerre/violation-comments-to-bitbucket-cloud-lib 
+* tomasbjerre/violation-comments-to-bitbucket-cloud-lib 
 
 [083d9c4d270b59b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/083d9c4d270b59b) Tomas Bjerre *2020-02-02 19:12:45*
 
@@ -192,7 +201,7 @@ Changelog of Violation comments to bitbucket cloud command line.
 
 **Revert "Avoiding shaddowing"**
 
- * This reverts commit 44fb3456c5e23979348944c0298cb61386dde461. 
+* This reverts commit 44fb3456c5e23979348944c0298cb61386dde461. 
 
 [90bc38716c1bf92](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/90bc38716c1bf92) Tomas Bjerre *2019-06-09 20:12:31*
 
@@ -202,7 +211,7 @@ Changelog of Violation comments to bitbucket cloud command line.
 
 **Avoiding shaddowing**
 
- * To get the marshalling working with plain/text 
+* To get the marshalling working with plain/text 
 
 [44fb3456c5e2397](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/44fb3456c5e2397) Tomas Bjerre *2019-06-09 20:10:30*
 
@@ -225,4 +234,3 @@ Changelog of Violation comments to bitbucket cloud command line.
 [fb6c0096568d766](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/fb6c0096568d766) Tomas Bjerre *2019-06-09 19:24:07*
 
 
- 
