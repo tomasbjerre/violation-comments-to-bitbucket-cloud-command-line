@@ -3,6 +3,15 @@
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
+## 1.23.0
+### No issue
+
+**new build script**
+
+
+[c7eaabb5d9f97ca](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/c7eaabb5d9f97ca) Tomas Bjerre *2021-04-04 16:47:44*
+
+
 ## 1.22.0
 ### No issue
 
@@ -85,7 +94,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.12
-### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
+### GitHub #1   
 
 **Changing username to workspace for repositories**
 
@@ -158,7 +167,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.6
-### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
+### GitHub #1   
 
 **Corrections in shadow JAR**
 
@@ -175,7 +184,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.5
-### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
+### GitHub #1   
 
 **Merging services**
 
