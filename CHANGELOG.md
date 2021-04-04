@@ -94,7 +94,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.12
-### GitHub #1   
+### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
 
 **Changing username to workspace for repositories**
 
@@ -167,7 +167,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.6
-### GitHub #1   
+### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
 
 **Corrections in shadow JAR**
 
@@ -184,7 +184,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.5
-### GitHub #1   
+### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
 
 **Merging services**
 
