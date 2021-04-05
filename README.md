@@ -1,8 +1,8 @@
 # Violation Comments To Bitbucket Cloud Command Line
 
 [![Build Status](https://travis-ci.org/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line.svg?branch=master)](https://travis-ci.org/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line)
-[![Bintray](https://api.bintray.com/packages/tomasbjerre/tomasbjerre/se.bjurr.violations%3Aviolation-comments-to-bitbucket-cloud-command-line/images/download.svg) ](https://bintray.com/tomasbjerre/tomasbjerre/se.bjurr.violations%3Aviolation-comments-to-bitbucket-cloud-command-line/_latestVersion)
 [![NPM](https://img.shields.io/npm/v/violation-comments-to-bitbucket-cloud-command-line.svg?style=flat-square) ](https://www.npmjs.com/package/violation-comments-to-bitbucket-cloud-command-line)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/se.bjurr.violations/violation-comments-to-bitbucket-cloud-command-line/badge.svg)](https://maven-badges.herokuapp.com/maven-central/se.bjurr.violations/violation-comments-to-bitbucket-cloud-command-line)
 
 Report static code analysis to Bitbucket Cloud. It uses the [Violations Lib](https://github.com/tomasbjerre/violations-lib).
 
