@@ -1,254 +1,384 @@
-
 # violation-comments-to-bitbucket-cloud-command-line changelog
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
-## 1.26.0
-### No issue
+## [1.27.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.27.0) (2021-06-16)
+
+
+
+### Features
+
+-  MSBuild parser ([ebde8](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ebde8e920a8ad23))  
+
+
+
+
+### Other changes
+
+**removing bintray link**
+
+
+[d61db](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/d61dbd40de47549) Tomas Bjerre *2021-04-05 16:10:12*
+
+## [1.26.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.26.0) (2021-04-04)
+
+
+
+
+
+
+
+### Other changes
 
 **new build script**
 
 
-[25dcfd862c0e537](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/25dcfd862c0e537) Tomas Bjerre *2021-04-04 18:30:23*
+[25dcf](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/25dcfd862c0e537) Tomas Bjerre *2021-04-04 18:30:23*
+
+## [1.23.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.23.0) (2021-04-04)
 
 
-## 1.23.0
-### No issue
-
-**new build script**
 
 
-[c7eaabb5d9f97ca](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/c7eaabb5d9f97ca) Tomas Bjerre *2021-04-04 16:47:44*
 
 
-## 1.22.0
-### No issue
+
+### Other changes
 
 **new build script**
 
 
-[1604e604c31f8e9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/1604e604c31f8e9) Tomas Bjerre *2021-04-04 16:36:56*
+[c7eaa](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/c7eaabb5d9f97ca) Tomas Bjerre *2021-04-04 16:47:44*
+
+## [1.22.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.22.0) (2021-04-04)
 
 
-## 1.20
-### No issue
+
+
+
+
+
+### Other changes
+
+**new build script**
+
+
+[1604e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/1604e604c31f8e9) Tomas Bjerre *2021-04-04 16:36:56*
+
+## [1.20](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.20) (2020-09-27)
+
+
+
+
+
+
+
+### Other changes
 
 **Find Security Bugs messages**
 
 
-[5342914ff47a452](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/5342914ff47a452) Tomas Bjerre *2020-09-27 17:38:33*
+[53429](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/5342914ff47a452) Tomas Bjerre *2020-09-27 17:38:33*
+
+## [1.19](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.19) (2020-09-23)
 
 
-## 1.19
-### No issue
+
+
+
+
+
+### Other changes
 
 **Allow Checkstyle reports with no line**
 
 
-[c028afb8acb8c8b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/c028afb8acb8c8b) Tomas Bjerre *2020-09-23 17:07:06*
+[c028a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/c028afb8acb8c8b) Tomas Bjerre *2020-09-23 17:07:06*
+
+## [1.18](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.18) (2020-09-20)
 
 
-## 1.18
-### No issue
+
+
+
+
+
+### Other changes
 
 **violations-lib 1.128**
 
 
-[9fe13a223d73521](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/9fe13a223d73521) Tomas Bjerre *2020-09-20 19:09:42*
+[9fe13](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/9fe13a223d73521) Tomas Bjerre *2020-09-20 19:09:42*
+
+## [1.17](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.17) (2020-07-05)
 
 
-## 1.17
-### No issue
-
-**New: custom logging in violations-lib**
 
 
-[dff44a3f433062b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/dff44a3f433062b) Tomas Bjerre *2020-07-05 12:56:04*
 
 
-## 1.16
-### GitHub #84   
-
-**XUnit tomasbjerre/violations-lib**
 
 
-[f7c5cf92c6afaa3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/f7c5cf92c6afaa3) Tomas Bjerre *2020-03-03 16:47:57*
+## [1.16](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.16) (2020-03-03)
 
 
-## 1.15
-### No issue
+
+
+
+
+
+### Other changes
+
+**XUnit tomasbjerre/violations-lib#84**
+
+
+[f7c5c](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/f7c5cf92c6afaa3) Tomas Bjerre *2020-03-03 16:47:57*
+
+## [1.15](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.15) (2020-02-16)
+
+
+
+
+
+
+
+### Other changes
 
 **Correcting lines in comments**
 
 
-[b679db68b6b10f6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/b679db68b6b10f6) Tomas Bjerre *2020-02-16 16:55:38*
+[b679d](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/b679db68b6b10f6) Tomas Bjerre *2020-02-16 16:55:38*
+
+## [1.14](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.14) (2020-02-16)
 
 
-## 1.14
-### No issue
+
+
+
+
+
+### Other changes
 
 **Switched from using username to workspace while removing comment**
 
 
-[ca233f02866aa62](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ca233f02866aa62) Tomas Bjerre *2020-02-16 16:49:00*
+[ca233](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ca233f02866aa62) Tomas Bjerre *2020-02-16 16:49:00*
+
+## [1.13](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.13) (2020-02-03)
 
 
-## 1.13
-### GitHub #82   
-
-**CPPCheckParser with auto closed <error/> tags tomasbjerre/violations-lib**
 
 
-[387ef2d206af609](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/387ef2d206af609) Tomas Bjerre *2020-02-03 16:19:30*
 
 
-## 1.12
-### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
+
+### Other changes
+
+**CPPCheckParser with auto closed <error/> tags tomasbjerre/violations-lib#82**
+
+
+[387ef](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/387ef2d206af609) Tomas Bjerre *2020-02-03 16:19:30*
+
+## [1.12](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.12) (2020-02-02)
+
+
+
+
+
+
+
+### Other changes
 
 **Changing username to workspace for repositories**
 
-* tomasbjerre/violation-comments-to-bitbucket-cloud-lib 
+* tomasbjerre/violation-comments-to-bitbucket-cloud-lib#1 
 
-[083d9c4d270b59b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/083d9c4d270b59b) Tomas Bjerre *2020-02-02 19:12:45*
+[083d9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/083d9c4d270b59b) Tomas Bjerre *2020-02-02 19:12:45*
 
-
-## 1.11
-### GitHub #80   
-
-**Add support for sonar issue report formats >= v7.5 tomasbjerre/violations-lib**
+## [1.11](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.11) (2020-01-03)
 
 
-[18130d9e88bf2a6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/18130d9e88bf2a6) Tomas Bjerre *2020-01-03 07:12:20*
 
 
-### No issue
 
+
+
+### Other changes
+
+**Add support for sonar issue report formats >= v7.5 tomasbjerre/violations-lib#80**
+
+
+[18130](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/18130d9e88bf2a6) Tomas Bjerre *2020-01-03 07:12:20*
 **doc**
 
 
-[58c2e05f3e001ac](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/58c2e05f3e001ac) Tomas Bjerre *2019-10-09 17:07:58*
-
+[58c2e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/58c2e05f3e001ac) Tomas Bjerre *2019-10-09 17:07:58*
 **Create FUNDING.yml**
 
 
-[a998417dee6704c](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/a998417dee6704c) Tomas Bjerre *2019-09-28 07:03:35*
+[a9984](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/a998417dee6704c) Tomas Bjerre *2019-09-28 07:03:35*
+
+## [1.10](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.10) (2019-08-03)
 
 
-## 1.10
-### No issue
+
+
+
+
+
+### Other changes
 
 **Changing name of JSHINT parser to JSLINT**
 
 
-[05afa60cb9ca692](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/05afa60cb9ca692) Tomas Bjerre *2019-08-03 11:10:30*
+[05afa](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/05afa60cb9ca692) Tomas Bjerre *2019-08-03 11:10:30*
+
+## [1.9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.9) (2019-06-16)
 
 
-## 1.9
-### No issue
+
+
+
+
+
+### Other changes
 
 **commentOnlyChangedFiles**
 
 
-[9c4796f2a8b1540](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/9c4796f2a8b1540) Tomas Bjerre *2019-06-16 16:53:38*
+[9c479](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/9c4796f2a8b1540) Tomas Bjerre *2019-06-16 16:53:38*
+
+## [1.8](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.8) (2019-06-16)
 
 
-## 1.8
-### No issue
+
+
+
+
+
+### Other changes
 
 **junit**
 
 
-[6ea030cd434ef3e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/6ea030cd434ef3e) Tomas Bjerre *2019-06-16 16:27:29*
-
+[6ea03](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/6ea030cd434ef3e) Tomas Bjerre *2019-06-16 16:27:29*
 **changelog**
 
 
-[744b51383a73781](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/744b51383a73781) Tomas Bjerre *2019-06-15 19:17:35*
+[744b5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/744b51383a73781) Tomas Bjerre *2019-06-15 19:17:35*
+
+## [1.7](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.7) (2019-06-15)
 
 
-## 1.7
-### No issue
+
+
+
+
+
+### Other changes
 
 **Artity 4 on -v**
 
 
-[50693f9a7cdaad6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/50693f9a7cdaad6) Tomas Bjerre *2019-06-15 19:03:38*
+[50693](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/50693f9a7cdaad6) Tomas Bjerre *2019-06-15 19:03:38*
+
+## [1.6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.6) (2019-06-11)
 
 
-## 1.6
-### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
-
-**Corrections in shadow JAR**
 
 
-[06c893e00e22ef9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/06c893e00e22ef9) Tomas Bjerre *2019-06-11 21:11:05*
 
 
-### No issue
 
+### Other changes
+
+**Corrections in shadow JAR #1**
+
+
+[06c89](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/06c893e00e22ef9) Tomas Bjerre *2019-06-11 21:11:05*
 **Version from Maven Central**
 
 
-[8dad3c3b1f2628a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/8dad3c3b1f2628a) Tomas Bjerre *2019-06-11 17:34:40*
+[8dad3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/8dad3c3b1f2628a) Tomas Bjerre *2019-06-11 17:34:40*
+
+## [1.5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.5) (2019-06-10)
 
 
-## 1.5
-### GitHub [#1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/1) MessageBodyReader of content-type text/plain and type class java.lang.String    *bug*  
-
-**Merging services**
 
 
-[0bdf54a42339db9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/0bdf54a42339db9) Tomas Bjerre *2019-06-10 03:46:55*
 
 
-### No issue
 
+### Other changes
+
+**Merging services #1**
+
+
+[0bdf5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/0bdf54a42339db9) Tomas Bjerre *2019-06-10 03:46:55*
 **doc**
 
 
-[2007505004c5a84](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/2007505004c5a84) Tomas Bjerre *2019-06-09 20:24:02*
+[20075](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/2007505004c5a84) Tomas Bjerre *2019-06-09 20:24:02*
+
+## [1.4](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.4) (2019-06-09)
 
 
-## 1.4
-### No issue
+
+
+
+
+
+### Other changes
 
 **DefaultTextPlain**
 
 
-[00e8abecddbedf5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/00e8abecddbedf5) Tomas Bjerre *2019-06-09 20:15:49*
+[00e8a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/00e8abecddbedf5) Tomas Bjerre *2019-06-09 20:15:49*
 
-**Revert "Avoiding shaddowing"**
-
-* This reverts commit 44fb3456c5e23979348944c0298cb61386dde461. 
-
-[90bc38716c1bf92](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/90bc38716c1bf92) Tomas Bjerre *2019-06-09 20:12:31*
+## [1.3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.3) (2019-06-09)
 
 
-## 1.3
-### No issue
+
+
+
+
+
+### Other changes
 
 **Avoiding shaddowing**
 
 * To get the marshalling working with plain/text 
 
-[44fb3456c5e2397](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/44fb3456c5e2397) Tomas Bjerre *2019-06-09 20:10:30*
+[44fb3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/44fb3456c5e2397) Tomas Bjerre *2019-06-09 20:10:30*
+
+## [1.2](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.2) (2019-06-09)
 
 
-## 1.2
-### No issue
+
+
+
+
+
+### Other changes
 
 **Handling test/plain**
 
 
-[a97b21558f50fdf](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/a97b21558f50fdf) Tomas Bjerre *2019-06-09 19:38:50*
+[a97b2](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/a97b21558f50fdf) Tomas Bjerre *2019-06-09 19:38:50*
+
+## [1.1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.1) (2019-06-09)
 
 
-## 1.1
-### No issue
+
+
+
+
+
+### Other changes
 
 **shouldCommentOnlyChangedContent**
 
 
-[fb6c0096568d766](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/fb6c0096568d766) Tomas Bjerre *2019-06-09 19:24:07*
+[fb6c0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/fb6c0096568d766) Tomas Bjerre *2019-06-09 19:24:07*
 
-
+    
