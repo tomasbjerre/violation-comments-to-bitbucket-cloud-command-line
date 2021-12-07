@@ -2,6 +2,18 @@
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
+## [1.30.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.30.0) (2021-12-07)
+
+
+
+### Features
+
+-  more parsers ([33deb](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/33deb95737e014d))  
+
+
+
+
+
 ## [1.29.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/releases/tag/1.29.0) (2021-11-20)
 
 
