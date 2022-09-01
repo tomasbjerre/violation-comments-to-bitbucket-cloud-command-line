@@ -2,52 +2,35 @@
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
+## 1.32.0 (2022-09-01)
+
+### Features
+
+-  stepping violations-lib ([ccd24](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ccd2474dea0cec6) Tomas Bjerre)  
+
 ## 1.31.0 (2022-03-27)
-
-
 
 ### Features
 
 -  stepping lib versions ([dc8ae](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/dc8aefdb5b61f17) Tomas Bjerre)  
 
-
-
-
-
 ## 1.30.0 (2021-12-07)
-
-
 
 ### Features
 
 -  more parsers ([33deb](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/33deb95737e014d) Tomas Bjerre)  
 
-
-
-
-
 ## 1.29.0 (2021-11-20)
-
-
 
 ### Features
 
 -  using npm-java-runner ([ea755](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ea75581c2e156fd) Tomas Bjerre)  
 
-
-
-
-
 ## 1.27.0 (2021-06-16)
-
-
 
 ### Features
 
 -  MSBuild parser ([ebde8](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ebde8e920a8ad23) Tomas Bjerre)  
-
-
-
 
 ### Other changes
 
@@ -59,12 +42,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.26.0 (2021-04-04)
 
-
-
-
-
-
-
 ### Other changes
 
 **new build script**
@@ -74,12 +51,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.23.0 (2021-04-04)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -91,12 +62,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.22.0 (2021-04-04)
 
-
-
-
-
-
-
 ### Other changes
 
 **new build script**
@@ -106,12 +71,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.20 (2020-09-27)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -123,12 +82,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.19 (2020-09-23)
 
-
-
-
-
-
-
 ### Other changes
 
 **Allow Checkstyle reports with no line**
@@ -138,12 +91,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.18 (2020-09-20)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -155,20 +102,7 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.17 (2020-07-05)
 
-
-
-
-
-
-
-
 ## 1.16 (2020-03-03)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -180,12 +114,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.15 (2020-02-16)
 
-
-
-
-
-
-
 ### Other changes
 
 **Correcting lines in comments**
@@ -195,12 +123,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.14 (2020-02-16)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -212,12 +134,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.13 (2020-02-03)
 
-
-
-
-
-
-
 ### Other changes
 
 **CPPCheckParser with auto closed <error/> tags tomasbjerre/violations-lib#82**
@@ -227,12 +143,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.12 (2020-02-02)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -244,12 +154,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.11 (2020-01-03)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -271,12 +175,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.10 (2019-08-03)
 
-
-
-
-
-
-
 ### Other changes
 
 **Changing name of JSHINT parser to JSLINT**
@@ -287,12 +185,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.9 (2019-06-16)
 
-
-
-
-
-
-
 ### Other changes
 
 **commentOnlyChangedFiles**
@@ -302,12 +194,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.8 (2019-06-16)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -324,12 +210,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.7 (2019-06-15)
 
-
-
-
-
-
-
 ### Other changes
 
 **Artity 4 on -v**
@@ -339,12 +219,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.6 (2019-06-11)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -361,12 +235,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.5 (2019-06-10)
 
-
-
-
-
-
-
 ### Other changes
 
 **Merging services #1**
@@ -382,12 +250,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.4 (2019-06-09)
 
-
-
-
-
-
-
 ### Other changes
 
 **DefaultTextPlain**
@@ -397,12 +259,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.3 (2019-06-09)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -415,12 +271,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.2 (2019-06-09)
 
-
-
-
-
-
-
 ### Other changes
 
 **Handling test/plain**
@@ -431,12 +281,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.1 (2019-06-09)
 
-
-
-
-
-
-
 ### Other changes
 
 **shouldCommentOnlyChangedContent**
@@ -446,12 +290,6 @@ Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 
 ## 1.0 (2019-06-09)
-
-
-
-
-
-
 
 ### Other changes
 
