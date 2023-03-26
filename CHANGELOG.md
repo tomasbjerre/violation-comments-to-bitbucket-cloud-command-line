@@ -2,6 +2,12 @@
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
+## 1.33.0 (2023-03-26)
+
+### Features
+
+-  stepping violations-lib ([32d46](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/32d46e1f2964367) Tomas Bjerre)  
+
 ## 1.32.0 (2022-09-01)
 
 ### Features
