@@ -2,6 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/violation-comments-to-bitbucket-cloud-command-line.svg?style=flat-square) ](https://www.npmjs.com/package/violation-comments-to-bitbucket-cloud-command-line)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/se.bjurr.violations/violation-comments-to-bitbucket-cloud-command-line/badge.svg)](https://maven-badges.herokuapp.com/maven-central/se.bjurr.violations/violation-comments-to-bitbucket-cloud-command-line)
+[![Docker Pulls](https://badgen.net/docker/pulls/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line?icon=docker&label=pulls)](https://hub.docker.com/r/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/)
 
 Report static code analysis to Bitbucket Cloud. It uses the [Violations Lib](https://github.com/tomasbjerre/violations-lib).
 
