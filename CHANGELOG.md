@@ -2,6 +2,12 @@
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
+## 1.34.0 (2024-03-24)
+
+### Features
+
+-  coverity parser ([0360e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/0360e5aaafddca3) Tomas Bjerre)  
+
 ## 1.33.0 (2023-03-26)
 
 ### Features
