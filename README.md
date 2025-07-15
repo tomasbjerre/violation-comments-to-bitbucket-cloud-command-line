@@ -13,6 +13,7 @@ The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comme
 Run it with:
 
 ```shell
+# Using application password
 npx violation-comments-to-bitbucket-cloud-command-line \
  -u tomasbjerre \
  -p MY-APPLICATION-PASSWORD \
@@ -21,9 +22,20 @@ npx violation-comments-to-bitbucket-cloud-command-line \
  -prid 1 \
  -v "CHECKSTYLE" "." ".*checkstyle/main\.xml$" "Checkstyle" \
  -v "JSHINT" "." ".*jshint/report\.xml$" "JSHint"
+ 
+# Using API token
+npx violation-comments-to-bitbucket-cloud-command-line \
+ -t MY-PROJECT-OR-REPOSITORY-APPLICATION-PASSWORD \
+ -ws tomasbjerre \
+ -rs violations-test \
+ -prid 1 \
+ -v "CHECKSTYLE" "." ".*checkstyle/main\.xml$" "Checkstyle" \
+ -v "JSHINT" "." ".*jshint/report\.xml$" "JSHint"
 ```
 
-Create **application passwords** like this: https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html
+Create **application passwords** like this: https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html. Pass the username (`-u`) and the application password (`-p`) to the command.
+
+Alternatively, the plugin supports **api tokens**; create them like this: https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/. Pass the api token (`-t`) to the command.
 
 If using it from **Jenkins**, you may integrate with Bitbucket Cloud with this plugin: https://github.com/jenkinsci/generic-webhook-trigger-plugin
 
@@ -138,6 +150,15 @@ Missing a format? Open an issue [here](https://github.com/tomasbjerre/violations
 # Usage
 
 ```shell
+-api-token, -t <string>                                 You can create an 
+                                                        'api token' in Bitbucket 
+                                                        to use here. See https://support.
+                                                        atlassian.com/bitbucket-cloud/
+                                                        docs/api-tokens/
+                                                        Note: If you pass this argument,
+                                                        `-u` and `-p` shall be omitted.
+                                                        <string>: any string
+                                                        Default: 
 -comment-only-changed-content, -cocc <boolean>          True if only changed 
                                                         parts of the changed files 
                                                         should be commented. False if 
@@ -172,6 +193,9 @@ ccwasfc <boolean>                                       Default: false
                                                         //confluence.atlassian.
                                                         com/bitbucket/app-passwords-828781300.
                                                         html
+                                                        Note: If you pass this argument,
+                                                        `-u` is required, and `-t` shall 
+                                                        be omitted.
                                                         <string>: any string
                                                         Default: 
 -pull-request-id, -prid <string>                        <string>: any string [Required]
@@ -185,7 +209,11 @@ ccwasfc <boolean>                                       Default: false
                                                         and supply output when 
                                                         reporting bugs.
                                                         Default: disabled
--username, -u <string>                                  <string>: any string
+-username, -u <string>                                  Username used in authenticating requests.
+                                                        Note: If you pass this argument,
+                                                        `-p` is required, and `-t` shall 
+                                                        be omitted.
+                                                        <string>: any string
                                                         Default: 
 --violations, -v <string>                               The violations to look 
                                                         for. <PARSER> <FOLDER> 
