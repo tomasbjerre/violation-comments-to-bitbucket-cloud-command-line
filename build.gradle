@@ -1,37 +1,12 @@
-apply plugin: 'java'
-
-buildscript {
- repositories {
-  mavenCentral()
-  mavenLocal()
- }
- dependencies {
-  classpath 'se.bjurr.gradle:gradle-scripts:2.+'
- }
+plugins {
+	id "se.bjurr.gradle.conventional-release" version "0.+"
+	id "se.bjurr.gradle.java-convention" version "0.+"
+	id "se.bjurr.gradle.update-versions" version "0.+"
 }
-project.ext.buildConfig = [
-  repoType: "COMMAND",
-  publishing: [
-    relocate: [
-      'org:org',
-      'javax:javax',
-      'com:com',
-      'se:se',
-      'io:io'
-    ]
-  ],
-  violations: [
-    updateReadme: true
-  ],
-  manifest: [
-    mainClass: 'se.bjurr.violations.main.Main'
-  ]
-]
-apply from: project.buildscript.classLoader.getResource('main.gradle').toURI()
 
 dependencies {
- implementation 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:1.16.1'
- implementation 'se.bjurr.violations:violations-lib:1.157.0'
- implementation 'se.softhouse:jargo:0.4.14'
- implementation 'org.slf4j:slf4j-simple:2.0.0'
+	implementation 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:1.17.1'
+	implementation 'se.bjurr.violations:violations-lib:1.158.1'
+	implementation 'se.softhouse:jargo:0.4.14'
+	implementation 'org.slf4j:slf4j-simple:2.0.17'
 }

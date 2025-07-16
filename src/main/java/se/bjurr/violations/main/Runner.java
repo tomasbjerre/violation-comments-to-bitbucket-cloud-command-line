@@ -105,11 +105,11 @@ public class Runner {
                 "You can create an 'application password' in Bitbucket to use here. See https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html")
             .build();
     final Argument<String> apiTokenArg =
-            stringArgument("-api-token", "-t")
-                    .defaultValue("")
-                    .description(
-                            "You can create an 'API token' in Bitbucket to use here. See https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/")
-                    .build();
+        stringArgument("-api-token", "-t")
+            .defaultValue("")
+            .description(
+                "You can create an 'API token' in Bitbucket to use here. See https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/")
+            .build();
     final Argument<Boolean> shouldCommentOnlyChangedContentArg =
         booleanArgument("-comment-only-changed-content", "-cocc")
             .defaultValue(true)
@@ -179,7 +179,8 @@ public class Runner {
       }
 
       if (this.apiToken != null && (this.username != null || this.password != null)) {
-        throw new Exception("API tokens and application passwords cannot be used simultaneously. Specify either one of them.");
+        throw new Exception(
+            "API tokens and application passwords cannot be used simultaneously. Specify either one of them.");
       }
 
     } catch (final ArgumentException exception) {
@@ -233,7 +234,7 @@ public class Runner {
             .withPassword(this.password);
       }
 
-      if (!this.apiToken.isEmpty()){
+      if (!this.apiToken.isEmpty()) {
         violationCommentsToBitbucketServerApi
             .withApiToken(this.apiToken);
       }
