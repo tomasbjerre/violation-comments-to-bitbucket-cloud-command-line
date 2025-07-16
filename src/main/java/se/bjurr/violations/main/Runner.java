@@ -43,6 +43,7 @@ public class Runner {
   private String repositorySlug;
   private String username;
   private String password;
+  private String apiToken;
   private boolean shouldCommentOnlyChangedContent;
   private boolean shouldCommentOnlyChangedFiles;
   private Integer maxNumberOfViolations;
@@ -103,6 +104,12 @@ public class Runner {
             .description(
                 "You can create an 'application password' in Bitbucket to use here. See https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html")
             .build();
+    final Argument<String> apiTokenArg =
+            stringArgument("-api-token", "-t")
+                    .defaultValue("")
+                    .description(
+                            "You can create an 'API token' in Bitbucket to use here. See https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/")
+                    .build();
     final Argument<Boolean> shouldCommentOnlyChangedContentArg =
         booleanArgument("-comment-only-changed-content", "-cocc")
             .defaultValue(true)
@@ -136,6 +143,7 @@ public class Runner {
                   repositorySlugArg, //
                   usernameArg, //
                   passwordArg, //
+                  apiTokenArg,
                   shouldCommentOnlyChangedContentArg, //
                   shouldCommentOnlyChangedFilesArg, //
                   maxNumberOfViolationsArg //
@@ -155,6 +163,7 @@ public class Runner {
       this.repositorySlug = parsed.get(repositorySlugArg);
       this.username = parsed.get(usernameArg);
       this.password = parsed.get(passwordArg);
+      this.apiToken = parsed.get(apiTokenArg);
       this.shouldCommentOnlyChangedContent = parsed.get(shouldCommentOnlyChangedContentArg);
       this.shouldCommentOnlyChangedFiles = parsed.get(shouldCommentOnlyChangedFilesArg);
       this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
@@ -167,6 +176,10 @@ public class Runner {
                     .collect(Collectors.joining(", "))
                 + "\n\nParsed parameters:\n"
                 + this.toString());
+      }
+
+      if (this.apiToken != null && (this.username != null || this.password != null)) {
+        throw new Exception("API tokens and application passwords cannot be used simultaneously. Specify either one of them.");
       }
 
     } catch (final ArgumentException exception) {
@@ -218,6 +231,11 @@ public class Runner {
         violationCommentsToBitbucketServerApi //
             .withUsername(this.username) //
             .withPassword(this.password);
+      }
+
+      if (!this.apiToken.isEmpty()){
+        violationCommentsToBitbucketServerApi
+            .withApiToken(this.apiToken);
       }
 
       violationCommentsToBitbucketServerApi //
