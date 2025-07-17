@@ -178,7 +178,7 @@ public class Runner {
                 + this.toString());
       }
 
-      if (this.apiToken != null && (this.username != null || this.password != null)) {
+      if (!this.apiToken.isEmpty() && (!this.username.isEmpty() || !this.password.isEmpty())) {
         throw new Exception(
             "API tokens and application passwords cannot be used simultaneously. Specify either one of them.");
       }
