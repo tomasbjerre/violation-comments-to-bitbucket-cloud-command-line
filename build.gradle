@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-	implementation 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:1.17.1'
+	implementation 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:1.17.2'
 	implementation 'se.bjurr.violations:violations-lib:1.158.1'
 	implementation 'se.softhouse:jargo:0.4.14'
 	implementation 'org.slf4j:slf4j-simple:2.0.17'

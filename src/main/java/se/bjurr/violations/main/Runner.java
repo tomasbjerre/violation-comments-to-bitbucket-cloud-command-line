@@ -235,8 +235,7 @@ public class Runner {
       }
 
       if (!this.apiToken.isEmpty()) {
-        violationCommentsToBitbucketServerApi
-            .withApiToken(this.apiToken);
+        violationCommentsToBitbucketServerApi.withApiToken(this.apiToken);
       }
 
       violationCommentsToBitbucketServerApi //
