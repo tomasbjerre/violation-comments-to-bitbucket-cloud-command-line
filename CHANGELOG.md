@@ -1,3 +1,10 @@
+## 1.35.1 (2025-07-17)
+
+### Bug Fixes
+
+-  missing MessageBodyReader ([f9a6d](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/f9a6d2bd4bb892e) Tomas Bjerre)  
+-  adding missin class files to jar #10 ([90ca3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/90ca3fddc14f6d4) Tomas Bjerre)  
+
 ## 1.35.0 (2025-07-17)
 
 ### Features
