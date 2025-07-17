@@ -1,3 +1,16 @@
+## 1.35.0 (2025-07-17)
+
+### Features
+
+-  Add support for Bitbucket API Tokens (#9) ([b1cdb](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/b1cdba5fbbf763e) a-ursu)  
+
+### Bug Fixes
+
+-  adjustments after merge of #9 ([52daf](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/52dafe542dc4e78) Tomas Bjerre)  
+
+### Dependency updates
+
+- violation-comments-to-bitbucket-cloud-lib:1.17.2 ([723bf](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/723bfa4ffc9cf1b) Tomas Bjerre)  
 # violation-comments-to-bitbucket-cloud-command-line changelog
 
 Changelog of violation-comments-to-bitbucket-cloud-command-line.
