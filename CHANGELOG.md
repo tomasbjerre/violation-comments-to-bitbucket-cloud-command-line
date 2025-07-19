@@ -18,9 +18,6 @@
 ### Dependency updates
 
 - violation-comments-to-bitbucket-cloud-lib:1.17.2 ([723bf](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/723bfa4ffc9cf1b) Tomas Bjerre)  
-# violation-comments-to-bitbucket-cloud-command-line changelog
-
-Changelog of violation-comments-to-bitbucket-cloud-command-line.
 
 ## 1.34.0 (2024-03-24)
 
