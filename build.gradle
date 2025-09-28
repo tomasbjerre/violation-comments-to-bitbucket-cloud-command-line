@@ -1,12 +1,22 @@
 plugins {
-	id "se.bjurr.gradle.conventional-release" version "0.+"
-	id "se.bjurr.gradle.java-convention" version "0.+"
-	id "se.bjurr.gradle.update-versions" version "0.+"
+	id "se.bjurr.gradle.bundle-command-shadow" version "1.1.2"
 }
 
 dependencies {
 	implementation 'se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:2.0.3'
-	implementation 'se.bjurr.violations:violations-lib:1.158.1'
+	implementation "se.bjurr.violations:violations-lib:1.160.0"
 	implementation 'se.softhouse:jargo:0.4.14'
 	implementation 'org.slf4j:slf4j-simple:2.0.17'
 }
+
+shadowExtension {
+	mainClass.set("se.bjurr.violations.main.Main")
+	relocate.set("org:org,jakarta:jakarta,javax:javax,com:com,se:se,io:io")
+}
+
+staticCodeAnalysisExtension {
+	maxViolations.set(16)
+}
+
+sourceCompatibility=17
+targetCompatibility=17

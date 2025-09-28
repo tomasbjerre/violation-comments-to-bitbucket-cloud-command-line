@@ -10,6 +10,11 @@ Report static code analysis to Bitbucket Cloud. It uses the [Violations Lib](htt
 
 The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comments-to-bitbucket-cloud-command-line).
 
+| Version           | Java Version |
+| ------------------| ------------ |
+| version < 1.2.0   | 11           |
+| 1.2.0 <= version  | 17           |
+
 Run it with:
 
 ```shell
