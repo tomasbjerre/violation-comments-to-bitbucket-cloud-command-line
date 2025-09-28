@@ -12,8 +12,8 @@ The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comme
 
 | Version           | Java Version |
 | ------------------| ------------ |
-| version < 1.2.0   | 11           |
-| 1.2.0 <= version  | 17           |
+| version < 1.36.0  | 11           |
+| 1.36.0 <= version | 17           |
 
 Run it with:
 
