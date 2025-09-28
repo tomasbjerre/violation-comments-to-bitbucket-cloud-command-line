@@ -1,3 +1,9 @@
+## 1.36.0 (2025-09-28)
+
+### Features
+
+-  PMD CPD 7 ([ff11f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/ff11fa643114f9e) Tomas Bjerre)  
+
 ## 1.35.1 (2025-07-17)
 
 ### Bug Fixes
