@@ -1,3 +1,9 @@
+## 1.36.1 (2025-10-05)
+
+### Bug Fixes
+
+-  docfx, message_severity ([af166](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/af166feaff8e689) Tomas Bjerre)  
+
 ## 1.36.0 (2025-09-28)
 
 ### Features
