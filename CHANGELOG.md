@@ -1,3 +1,12 @@
+## 1.36.2 (2025-11-30)
+
+### Bug Fixes
+
+-  Cannot parse JSON responses since 1.35.x ([3506f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/3506f3153db3150) Tomas Bjerre)  [#11](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/issues/11)  
+
+### Dependency updates
+
+- gradle 9 ([d4f3a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/d4f3a8d3e93ba94) Tomas Bjerre)  
 ## 1.36.1 (2025-10-05)
 
 ### Bug Fixes
