@@ -10,6 +10,7 @@ import static se.softhouse.jargo.Arguments.optionArgument;
 import static se.softhouse.jargo.Arguments.stringArgument;
 import static se.softhouse.jargo.CommandLineParser.withArguments;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Arrays;
@@ -43,13 +44,13 @@ public class Runner {
   private String repositorySlug;
   private String username;
   private String password;
-  private String apiToken;
+  private String apiToken; // NOPMD only used within main(), kept as a field for readability
   private boolean shouldCommentOnlyChangedContent;
-  private boolean shouldCommentOnlyChangedFiles;
+  private boolean shouldCommentOnlyChangedFiles; // NOPMD only used within main()
   private Integer maxNumberOfViolations;
-  private boolean showDebugInfo;
+  private boolean showDebugInfo; // NOPMD only used within main(), kept as a field for readability
 
-  public void main(final String args[]) throws Exception {
+  public void main(final String... args) throws Exception {
     final Argument<?> helpArgument = helpArgument("-h", "--help");
     final String parsersString =
         Arrays.asList(Parser.values()).stream()
@@ -169,7 +170,7 @@ public class Runner {
       this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
       this.showDebugInfo = parsed.wasGiven(showDebugInfo);
       if (this.showDebugInfo) {
-        System.out.println(
+        System.out.println( // NOPMD stdout is the CLI output
             "Given parameters:\n"
                 + Arrays.asList(args).stream()
                     .map((it) -> it.toString())
@@ -184,22 +185,28 @@ public class Runner {
       }
 
     } catch (final ArgumentException exception) {
-      System.out.println(exception.getMessageAndUsage());
-      System.exit(1);
+      System.out.println(exception.getMessageAndUsage()); // NOPMD stdout is the CLI output
+      System.exit(1); // NOPMD CLI exit code
     }
 
     ViolationsLogger violationsLogger =
         new ViolationsLogger() {
           @Override
           public void log(final Level level, final String string) {
-            System.out.println(level + " " + string);
+            System.out.println(level + " " + string); // NOPMD stdout is the CLI output
           }
 
           @Override
+          @SuppressFBWarnings(
+              value = "INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE",
+              justification =
+                  "Printing the stack trace to this CLI's own stdout is the intended behavior")
           public void log(final Level level, final String string, final Throwable t) {
             final StringWriter sw = new StringWriter();
-            t.printStackTrace(new PrintWriter(sw));
-            System.out.println(level + " " + string + "\n" + sw.toString());
+            t.printStackTrace(
+                new PrintWriter(sw)); // NOPMD writes to an in-memory buffer, not System.err
+            System.out.println( // NOPMD stdout is the CLI output
+                level + " " + string + "\n" + sw.toString());
           }
         };
     if (!this.showDebugInfo) {
@@ -223,7 +230,7 @@ public class Runner {
       allParsedViolations.addAll(parsedViolations);
     }
 
-    System.out.println(
+    System.out.println( // NOPMD stdout is the CLI output
         "PR: " + this.workspace + "/" + this.repositorySlug + "/" + this.pullRequestId);
     final ViolationCommentsToBitbucketCloudApi violationCommentsToBitbucketServerApi =
         new ViolationCommentsToBitbucketCloudApi();
@@ -255,19 +262,25 @@ public class Runner {
               new ViolationsLogger() {
                 @Override
                 public void log(final Level level, final String string) {
-                  System.out.println(level + " " + string);
+                  System.out.println(level + " " + string); // NOPMD stdout is the CLI output
                 }
 
                 @Override
+                @SuppressFBWarnings(
+                    value = "INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE",
+                    justification =
+                        "Printing the stack trace to this CLI's own stdout is the intended behavior")
                 public void log(final Level level, final String string, final Throwable t) {
                   final StringWriter sw = new StringWriter();
-                  t.printStackTrace(new PrintWriter(sw));
-                  System.out.println(level + " " + string + "\n" + sw.toString());
+                  t.printStackTrace(
+                      new PrintWriter(sw)); // NOPMD writes to an in-memory buffer, not System.err
+                  System.out.println( // NOPMD stdout is the CLI output
+                      level + " " + string + "\n" + sw.toString());
                 }
               }) //
           .toPullRequest();
     } catch (final Exception e) {
-      e.printStackTrace();
+      e.printStackTrace(); // NOPMD top-level CLI error handler
     }
   }
 
