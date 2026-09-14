@@ -2,23 +2,21 @@ package se.bjurr.violations.main;
 
 import static se.bjurr.violations.lib.ViolationsApi.violationsApi;
 import static se.bjurr.violations.lib.model.SEVERITY.INFO;
-import static se.softhouse.jargo.Arguments.booleanArgument;
-import static se.softhouse.jargo.Arguments.enumArgument;
-import static se.softhouse.jargo.Arguments.helpArgument;
-import static se.softhouse.jargo.Arguments.integerArgument;
-import static se.softhouse.jargo.Arguments.optionArgument;
-import static se.softhouse.jargo.Arguments.stringArgument;
-import static se.softhouse.jargo.CommandLineParser.withArguments;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.ParameterException;
 import se.bjurr.violations.comments.bitbucketcloud.lib.ViolationCommentsToBitbucketCloudApi;
 import se.bjurr.violations.lib.FilteringViolationsLogger;
 import se.bjurr.violations.lib.ViolationsLogger;
@@ -26,167 +24,139 @@ import se.bjurr.violations.lib.model.SEVERITY;
 import se.bjurr.violations.lib.model.Violation;
 import se.bjurr.violations.lib.reports.Parser;
 import se.bjurr.violations.lib.util.Filtering;
-import se.softhouse.jargo.Argument;
-import se.softhouse.jargo.ArgumentException;
-import se.softhouse.jargo.ParsedArguments;
 
+@Command(name = "violation-comments-to-bitbucket-cloud-command-line")
 public class Runner {
 
-  private List<List<String>> violations;
-  private boolean createCommentWithAllSingleFileComments;
-  private boolean createSingleFileComments;
-  private SEVERITY minSeverity;
-  private Boolean keepOldComments;
-  private String commentTemplate;
+  @Option(
+      names = {"-h", "--help"},
+      usageHelp = true,
+      description = "Show this help message and exit.")
+  private boolean help;
 
+  @Option(
+      names = {"--violations", "-v"},
+      arity = "4",
+      description =
+          "The violations to look for. <PARSER> <FOLDER> <REGEXP PATTERN> <NAME> where PARSER"
+              + " is one of the values of se.bjurr.violations.lib.reports.Parser (see supported"
+              + " formats table in README for the full list).\nExample: -v \"JSHINT\" \".\""
+              + " \".*/jshint.xml$\" \"JSHint\"")
+  private List<String> violations = new ArrayList<>(); // NOPMD picocli reflection
+
+  @Option(
+      names = {"-severity", "-s"},
+      description = "Minimum severity level to report.")
+  private SEVERITY minSeverity = INFO; // NOPMD picocli reflection
+
+  @Option(
+      names = "-show-debug-info",
+      description =
+          "Please run your command with this parameter and supply output when reporting bugs.")
+  private boolean showDebugInfo;
+
+  @Option(
+      names = {"-create-comment-with-all-single-file-comments", "-ccwasfc"},
+      arity = "1")
+  private boolean createCommentWithAllSingleFileComments = false; // NOPMD picocli reflection
+
+  @Option(
+      names = {"-create-single-file-comments", "-csfc"},
+      arity = "1")
+  private boolean createSingleFileComments = true; // NOPMD picocli reflection
+
+  @Option(names = "-keep-old-comments", arity = "1")
+  private Boolean keepOldComments = false; // NOPMD picocli reflection
+
+  @Option(
+      names = "-comment-template",
+      description = "https://github.com/tomasbjerre/violation-comments-lib")
+  private String commentTemplate = ""; // NOPMD picocli reflection
+
+  @Option(
+      names = {"-pull-request-id", "-prid"},
+      required = true)
   private String pullRequestId;
+
+  @Option(
+      names = {"-workspace", "-ws"},
+      required = true,
+      description = "The workspace is typically same as username.")
   private String workspace;
+
+  @Option(
+      names = {"-repository-slug", "-rs"},
+      required = true)
   private String repositorySlug;
-  private String username;
-  private String password;
-  private String apiToken; // NOPMD only used within main(), kept as a field for readability
-  private boolean shouldCommentOnlyChangedContent;
-  private boolean shouldCommentOnlyChangedFiles; // NOPMD only used within main()
-  private Integer maxNumberOfViolations;
-  private boolean showDebugInfo; // NOPMD only used within main(), kept as a field for readability
+
+  @Option(names = {"-username", "-u"})
+  private String username = ""; // NOPMD picocli reflection
+
+  @Option(
+      names = {"-password", "-p"},
+      description =
+          "You can create an 'application password' in Bitbucket to use here. See"
+              + " https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html")
+  private String password = ""; // NOPMD picocli reflection
+
+  @Option(
+      names = {"-api-token", "-t"},
+      description =
+          "You can create an 'API token' in Bitbucket to use here. See"
+              + " https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/")
+  private String apiToken = ""; // NOPMD picocli reflection
+
+  @Option(
+      names = {"-comment-only-changed-content", "-cocc"},
+      arity = "1",
+      description =
+          "True if only changed parts of the changed files should be commented. False if all"
+              + " findings on the changed files should be commented.")
+  private boolean shouldCommentOnlyChangedContent = true; // NOPMD picocli reflection
+
+  @Option(
+      names = {"-comment-only-changed-files", "-cocf"},
+      arity = "1",
+      description =
+          "True if only changed files should be commented. False if all findings should be"
+              + " commented.")
+  private boolean shouldCommentOnlyChangedFiles = true; // NOPMD picocli reflection
+
+  @Option(names = {"-max-number-of-violations", "-max"})
+  private Integer maxNumberOfViolations = Integer.MAX_VALUE; // NOPMD picocli reflection
 
   public void main(final String... args) throws Exception {
-    final Argument<?> helpArgument = helpArgument("-h", "--help");
-    final String parsersString =
-        Arrays.asList(Parser.values()).stream()
-            .map((it) -> it.toString())
-            .collect(Collectors.joining(", "));
-    final Argument<List<List<String>>> violationsArg =
-        stringArgument("--violations", "-v")
-            .arity(4)
-            .repeated()
-            .description(
-                "The violations to look for. <PARSER> <FOLDER> <REGEXP PATTERN> <NAME> where PARSER is one of: "
-                    + parsersString
-                    + "\n Example: -v \"JSHINT\" \".\" \".*/jshint.xml$\" \"JSHint\"")
-            .build();
-    final Argument<SEVERITY> minSeverityArg =
-        enumArgument(SEVERITY.class, "-severity", "-s")
-            .defaultValue(INFO)
-            .description("Minimum severity level to report.")
-            .build();
-    final Argument<Boolean> showDebugInfo =
-        optionArgument("-show-debug-info")
-            .description(
-                "Please run your command with this parameter and supply output when reporting bugs.")
-            .build();
-
-    final Argument<Boolean> createCommentWithAllSingleFileCommentsArg =
-        booleanArgument("-create-comment-with-all-single-file-comments", "-ccwasfc")
-            .defaultValue(false)
-            .build();
-    final Argument<Boolean> createSingleFileCommentsArg =
-        booleanArgument("-create-single-file-comments", "-csfc").defaultValue(true).build();
-    final Argument<Boolean> keepOldCommentsArg =
-        booleanArgument("-keep-old-comments").defaultValue(false).build();
-    final Argument<String> commentTemplateArg =
-        stringArgument("-comment-template")
-            .defaultValue("")
-            .description("https://github.com/tomasbjerre/violation-comments-lib")
-            .build();
-    final Argument<String> pullRequestIdArg =
-        stringArgument("-pull-request-id", "-prid").required().build();
-    final Argument<String> workspaceArg =
-        stringArgument("-workspace", "-ws")
-            .required()
-            .description("The workspace is typically same as username.")
-            .build();
-    final Argument<String> repositorySlugArg =
-        stringArgument("-repository-slug", "-rs").required().build();
-    final Argument<String> usernameArg = stringArgument("-username", "-u").defaultValue("").build();
-    final Argument<String> passwordArg =
-        stringArgument("-password", "-p")
-            .defaultValue("")
-            .description(
-                "You can create an 'application password' in Bitbucket to use here. See https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html")
-            .build();
-    final Argument<String> apiTokenArg =
-        stringArgument("-api-token", "-t")
-            .defaultValue("")
-            .description(
-                "You can create an 'API token' in Bitbucket to use here. See https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/")
-            .build();
-    final Argument<Boolean> shouldCommentOnlyChangedContentArg =
-        booleanArgument("-comment-only-changed-content", "-cocc")
-            .defaultValue(true)
-            .description(
-                "True if only changed parts of the changed files should be commented. False if all findings on the changed files should be commented.")
-            .build();
-    final Argument<Boolean> shouldCommentOnlyChangedFilesArg =
-        booleanArgument("-comment-only-changed-files", "-cocf")
-            .defaultValue(true)
-            .description(
-                "True if only changed files should be commented. False if all findings should be commented.")
-            .build();
-    final Argument<Integer> maxNumberOfViolationsArg =
-        integerArgument("-max-number-of-violations", "-max")
-            .defaultValue(Integer.MAX_VALUE)
-            .build();
-
+    final CommandLine commandLine = new CommandLine(this);
     try {
-      final ParsedArguments parsed =
-          withArguments( //
-                  helpArgument, //
-                  violationsArg, //
-                  minSeverityArg, //
-                  showDebugInfo, //
-                  createCommentWithAllSingleFileCommentsArg, //
-                  createSingleFileCommentsArg, //
-                  keepOldCommentsArg, //
-                  commentTemplateArg, //
-                  pullRequestIdArg, //
-                  workspaceArg, //
-                  repositorySlugArg, //
-                  usernameArg, //
-                  passwordArg, //
-                  apiTokenArg,
-                  shouldCommentOnlyChangedContentArg, //
-                  shouldCommentOnlyChangedFilesArg, //
-                  maxNumberOfViolationsArg //
-                  ) //
-              .parse(args);
-
-      this.violations = parsed.get(violationsArg);
-      this.minSeverity = parsed.get(minSeverityArg);
-      this.createCommentWithAllSingleFileComments =
-          parsed.get(createCommentWithAllSingleFileCommentsArg);
-      this.createSingleFileComments = parsed.get(createSingleFileCommentsArg);
-      this.keepOldComments = parsed.get(keepOldCommentsArg);
-      this.commentTemplate = parsed.get(commentTemplateArg);
-
-      this.pullRequestId = parsed.get(pullRequestIdArg);
-      this.workspace = parsed.get(workspaceArg);
-      this.repositorySlug = parsed.get(repositorySlugArg);
-      this.username = parsed.get(usernameArg);
-      this.password = parsed.get(passwordArg);
-      this.apiToken = parsed.get(apiTokenArg);
-      this.shouldCommentOnlyChangedContent = parsed.get(shouldCommentOnlyChangedContentArg);
-      this.shouldCommentOnlyChangedFiles = parsed.get(shouldCommentOnlyChangedFilesArg);
-      this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
-      this.showDebugInfo = parsed.wasGiven(showDebugInfo);
-      if (this.showDebugInfo) {
-        System.out.println( // NOPMD stdout is the CLI output
-            "Given parameters:\n"
-                + Arrays.asList(args).stream()
-                    .map((it) -> it.toString())
-                    .collect(Collectors.joining(", "))
-                + "\n\nParsed parameters:\n"
-                + this.toString());
-      }
-
-      if (!this.apiToken.isEmpty() && (!this.username.isEmpty() || !this.password.isEmpty())) {
-        throw new Exception(
-            "API tokens and application passwords cannot be used simultaneously. Specify either one of them.");
-      }
-
-    } catch (final ArgumentException exception) {
-      System.out.println(exception.getMessageAndUsage()); // NOPMD stdout is the CLI output
+      commandLine.parseArgs(args);
+    } catch (final ParameterException exception) {
+      System.out.println(exception.getMessage()); // NOPMD stdout is the CLI output
+      exception.getCommandLine().usage(System.out);
       System.exit(1); // NOPMD CLI exit code
+      return;
+    }
+
+    if (commandLine.isUsageHelpRequested()) {
+      commandLine.usage(System.out);
+      return;
+    }
+
+    if (!this.apiToken.isEmpty() && (!this.username.isEmpty() || !this.password.isEmpty())) {
+      System.out.println( // NOPMD stdout is the CLI output
+          "API tokens and application passwords cannot be used simultaneously. Specify either"
+              + " one of them.");
+      System.exit(1); // NOPMD CLI exit code
+      return;
+    }
+
+    if (this.showDebugInfo) {
+      System.out.println( // NOPMD stdout is the CLI output
+          "Given parameters:\n"
+              + Arrays.asList(args).stream()
+                  .map((it) -> it.toString())
+                  .collect(Collectors.joining(", "))
+              + "\n\nParsed parameters:\n"
+              + this.toString());
     }
 
     ViolationsLogger violationsLogger =
@@ -214,8 +184,9 @@ public class Runner {
     }
 
     Set<Violation> allParsedViolations = new TreeSet<>();
-    for (final List<String> configuredViolation : this.violations) {
-      final String reporter = configuredViolation.size() >= 4 ? configuredViolation.get(3) : null;
+    for (int i = 0; i < this.violations.size(); i += 4) {
+      final List<String> configuredViolation = this.violations.subList(i, i + 4);
+      final String reporter = configuredViolation.get(3);
       final Set<Violation> parsedViolations =
           violationsApi() //
               .withViolationsLogger(violationsLogger) //
@@ -300,9 +271,9 @@ public class Runner {
         + this.commentTemplate
         + ", pullRequestId="
         + this.pullRequestId
-        + ", projectKey="
+        + ", workspace="
         + this.workspace
-        + ", repoSlug="
+        + ", repositorySlug="
         + this.repositorySlug
         + ", username="
         + this.username

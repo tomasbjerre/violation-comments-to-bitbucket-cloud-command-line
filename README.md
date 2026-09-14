@@ -155,96 +155,62 @@ Missing a format? Open an issue [here](https://github.com/tomasbjerre/violations
 # Usage
 
 ```shell
--api-token, -t <string>                                 You can create an 
-                                                        'api token' in Bitbucket 
-                                                        to use here. See https://support.
-                                                        atlassian.com/bitbucket-cloud/
-                                                        docs/api-tokens/
-                                                        Note: If you pass this argument,
-                                                        `-u` and `-p` shall be omitted.
-                                                        <string>: any string
-                                                        Default: 
--comment-only-changed-content, -cocc <boolean>          True if only changed 
-                                                        parts of the changed files 
-                                                        should be commented. False if 
-                                                        all findings on the 
-                                                        changed files should be 
-                                                        commented.
-                                                        <boolean>: true or false
-                                                        Default: true
--comment-only-changed-files, -cocf <boolean>            True if only changed 
-                                                        files should be commented. 
-                                                        False if all findings should 
-                                                        be commented.
-                                                        <boolean>: true or false
-                                                        Default: true
--comment-template <string>                              https://github.
-                                                        com/tomasbjerre/violation-comments-lib
-                                                        <string>: any string
-                                                        Default: 
--create-comment-with-all-single-file-comments, -        <boolean>: true or false
-ccwasfc <boolean>                                       Default: false
--create-single-file-comments, -csfc <boolean>           <boolean>: true or false
-                                                        Default: true
--h, --help <argument-to-print-help-for>                 <argument-to-print-help-for>: an argument to print help for
-                                                        Default: If no specific parameter is given the whole usage text is given
--keep-old-comments <boolean>                            <boolean>: true or false
-                                                        Default: false
--max-number-of-violations, -max <integer>               <integer>: -2,147,483,648 to 2,147,483,647
-                                                        Default: 2,147,483,647
--password, -p <string>                                  You can create an 
-                                                        'application password' in Bitbucket 
-                                                        to use here. See https:
-                                                        //confluence.atlassian.
-                                                        com/bitbucket/app-passwords-828781300.
-                                                        html
-                                                        Note: If you pass this argument,
-                                                        `-u` is required, and `-t` shall 
-                                                        be omitted.
-                                                        <string>: any string
-                                                        Default: 
--pull-request-id, -prid <string>                        <string>: any string [Required]
--repository-slug, -rs <string>                          <string>: any string [Required]
--severity, -s <SEVERITY>                                Minimum severity level 
-                                                        to report.
-                                                        <SEVERITY>: {INFO | WARN | ERROR}
-                                                        Default: INFO
--show-debug-info                                        Please run your 
-                                                        command with this parameter 
-                                                        and supply output when 
-                                                        reporting bugs.
-                                                        Default: disabled
--username, -u <string>                                  Username used in authenticating requests.
-                                                        Note: If you pass this argument,
-                                                        `-p` is required, and `-t` shall 
-                                                        be omitted.
-                                                        <string>: any string
-                                                        Default: 
---violations, -v <string>                               The violations to look 
-                                                        for. <PARSER> <FOLDER> 
-                                                        <REGEXP PATTERN> <NAME> where 
-                                                        PARSER is one of: 
-                                                        ANDROIDLINT, CHECKSTYLE, CODENARC, 
-                                                        CLANG, CPD, CPPCHECK, 
-                                                        CPPLINT, CSSLINT, FINDBUGS, 
-                                                        FLAKE8, FXCOP, GENDARME, IAR, 
-                                                        JCREPORT, JSHINT, JUNIT, LINT, 
-                                                        KLOCWORK, KOTLINMAVEN, 
-                                                        KOTLINGRADLE, MSCPP, MYPY, GOLINT, 
-                                                        GOOGLEERRORPRONE, PERLCRITIC, PITEST, 
-                                                        PMD, PYDOCSTYLE, PYLINT, 
-                                                        RESHARPER, SBTSCALAC, SIMIAN, 
-                                                        SONAR, STYLECOP, XMLLINT, 
-                                                        YAMLLINT, ZPTLINT, DOCFX, PCLINT
-                                                        
-                                                         Example: -v "JSHINT" 
-                                                        "." ".*/jshint.xml$" 
-                                                        "JSHint" [Supports Multiple occurrences]
-                                                        <string>: any string
-                                                        Default: Empty list
--workspace, -ws <string>                                The workspace is 
-                                                        typically same as username. [Required]
-                                                        <string>: any string
+Usage: violation-comments-to-bitbucket-cloud-command-line [-h]
+       [-show-debug-info] [-ccwasfc=<createCommentWithAllSingleFileComments>]
+       [-cocc=<shouldCommentOnlyChangedContent>]
+       [-cocf=<shouldCommentOnlyChangedFiles>]
+       [-comment-template=<commentTemplate>] [-csfc=<createSingleFileComments>]
+       [-keep-old-comments=<keepOldComments>] [-max=<maxNumberOfViolations>]
+       [-p=<password>] -prid=<pullRequestId> -rs=<repositorySlug>
+       [-s=<minSeverity>] [-t=<apiToken>] [-u=<username>] -ws=<workspace>
+       [-v=<violations> <violations> <violations> <violations>]...
+      -ccwasfc, -create-comment-with-all-single-file-comments=<createCommentWith
+        AllSingleFileComments>
+
+      -cocc, -comment-only-changed-content=<shouldCommentOnlyChangedContent>
+                             True if only changed parts of the changed files
+                               should be commented. False if all findings on
+                               the changed files should be commented.
+      -cocf, -comment-only-changed-files=<shouldCommentOnlyChangedFiles>
+                             True if only changed files should be commented.
+                               False if all findings should be commented.
+      -comment-template=<commentTemplate>
+                             https://github.
+                               com/tomasbjerre/violation-comments-lib
+      -csfc, -create-single-file-comments=<createSingleFileComments>
+
+  -h, --help                 Show this help message and exit.
+      -keep-old-comments=<keepOldComments>
+
+      -max, -max-number-of-violations=<maxNumberOfViolations>
+
+  -p, -password=<password>   You can create an 'application password' in
+                               Bitbucket to use here. See https://confluence.
+                               atlassian.com/bitbucket/app-passwords-828781300.
+                               html
+      -prid, -pull-request-id=<pullRequestId>
+
+      -rs, -repository-slug=<repositorySlug>
+
+  -s, -severity=<minSeverity>
+                             Minimum severity level to report.
+      -show-debug-info       Please run your command with this parameter and
+                               supply output when reporting bugs.
+  -t, -api-token=<apiToken>  You can create an 'API token' in Bitbucket to use
+                               here. See https://support.atlassian.
+                               com/bitbucket-cloud/docs/api-tokens/
+  -u, -username=<username>
+  -v, --violations=<violations> <violations> <violations> <violations>
+                             The violations to look for. <PARSER> <FOLDER>
+                               <REGEXP PATTERN> <NAME> where PARSER is one of
+                               the values of se.bjurr.violations.lib.reports.
+                               Parser (see supported formats table in README
+                               for the full list).
+                             Example: -v "JSHINT" "." ".*/jshint.xml$" "JSHint"
+      -ws, -workspace=<workspace>
+                             The workspace is typically same as username.
 ```
+
+Note: `-api-token`/`-t` cannot be combined with `-username`/`-u` or `-password`/`-p`.
 
 Checkout the [Violations Lib](https://github.com/tomasbjerre/violations-lib) for more documentation.

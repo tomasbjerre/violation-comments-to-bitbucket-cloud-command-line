@@ -1,11 +1,11 @@
 plugins {
-	id "se.bjurr.gradle.bundle-command-shadow" version "2.1.1"
+	id "se.bjurr.gradle.bundle-command-shadow" version "2.2.1"
 }
 
 dependencies {
-	implementation "se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:2.0.4"
-	implementation "se.bjurr.violations:violations-lib:2.0.2"
-	implementation 'se.softhouse:jargo:0.4.14'
+	implementation "se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib:2.0.5"
+	implementation "se.bjurr.violations:violations-lib:2.1.0"
+	implementation 'info.picocli:picocli:4.7.7'
 	implementation "org.slf4j:slf4j-simple:2.0.19"
 }
 
