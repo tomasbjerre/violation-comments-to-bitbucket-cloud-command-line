@@ -1,3 +1,9 @@
+## 1.37.1 (2026-09-14)
+
+### Bug Fixes
+
+-  bump ([fa05f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/fa05f24792c48cf) Tomas Bjerre)  
+
 ## 1.37.0 (2026-09-14)
 
 ### Features
