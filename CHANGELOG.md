@@ -1,3 +1,34 @@
+## 1.37.0 (2026-09-14)
+
+### Features
+
+-  migrate CLI argument parsing from jargo to picocli ([180f3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/180f31263fd6a75) Tomas Bjerre)  
+
+### Dependency updates
+
+- gradle ([b85a2](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/b85a29f468089e5) Tomas Bjerre)  
+### Other changes
+
+**Use shared reusable release workflow**
+
+* Replace the repo-local release.yaml body with a call to 
+* tomasbjerre/.github&#x27;s gradle-npm-maven-docker-release.yaml reusable 
+* workflow, so the release steps are maintained in one place. 
+* Co-Authored-By: Claude Sonnet 5 &lt;noreply@anthropic.com&gt; 
+* Claude-Session: https://claude.ai/code/session_017K9KgD31eJFz7wu9b2C7XE 
+
+[452a9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/452a93e52c775e3) Tomas Bjerre *2026-09-14 11:25:54*
+
+**Fix broken Maven Central badge in README**
+
+* maven-badges.herokuapp.com is down; switch to img.shields.io badge 
+* linking to search.maven.org. 
+* Co-Authored-By: Claude Sonnet 5 &lt;noreply@anthropic.com&gt; 
+* Claude-Session: https://claude.ai/code/session_011PGVf85V1VhJj4oM3rKh7b 
+
+[7c665](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/7c665a11c030900) Tomas Bjerre *2026-09-13 08:52:01*
+
+
 ## 1.36.2 (2025-11-30)
 
 ### Bug Fixes
