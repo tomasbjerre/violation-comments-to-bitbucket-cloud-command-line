@@ -1,0 +1,13 @@
+name: Release
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    uses: tomasbjerre/.github/.github/workflows/gradle-npm-maven-docker-release.yaml@master
+    secrets: inherit
