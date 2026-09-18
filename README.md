@@ -156,7 +156,8 @@ Missing a format? Open an issue [here](https://github.com/tomasbjerre/violations
 
 ```shell
 Usage: violation-comments-to-bitbucket-cloud-command-line [-h]
-       [-show-debug-info] [-ccwasfc=<createCommentWithAllSingleFileComments>]
+       [-show-debug-info] [-cct=<createCommentTasks>]
+       [-ccwasfc=<createCommentWithAllSingleFileComments>]
        [-cocc=<shouldCommentOnlyChangedContent>]
        [-cocf=<shouldCommentOnlyChangedFiles>]
        [-comment-template=<commentTemplate>] [-csfc=<createSingleFileComments>]
@@ -164,6 +165,10 @@ Usage: violation-comments-to-bitbucket-cloud-command-line [-h]
        [-p=<password>] -prid=<pullRequestId> -rs=<repositorySlug>
        [-s=<minSeverity>] [-t=<apiToken>] [-u=<username>] -ws=<workspace>
        [-v=<violations> <violations> <violations> <violations>]...
+      -cct, -create-comment-tasks=<createCommentTasks>
+                             True if each posted comment should also get a
+                               Bitbucket Cloud task attached to it, so it's
+                               required to be resolved.
       -ccwasfc, -create-comment-with-all-single-file-comments=<createCommentWith
         AllSingleFileComments>
 
