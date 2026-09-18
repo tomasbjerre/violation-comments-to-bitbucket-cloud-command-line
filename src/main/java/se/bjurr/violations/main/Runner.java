@@ -69,6 +69,14 @@ public class Runner {
   private Boolean keepOldComments = false; // NOPMD picocli reflection
 
   @Option(
+      names = {"-create-comment-tasks", "-cct"},
+      arity = "1",
+      description =
+          "True if each posted comment should also get a Bitbucket Cloud task attached to it, so"
+              + " it's required to be resolved.")
+  private boolean createCommentTasks = false; // NOPMD picocli reflection
+
+  @Option(
       names = "-comment-template",
       description = "https://github.com/tomasbjerre/violation-comments-lib")
   private String commentTemplate = ""; // NOPMD picocli reflection
@@ -227,6 +235,7 @@ public class Runner {
           .withShouldCommentOnlyChangedContent(this.shouldCommentOnlyChangedContent) //
           .withShouldCommentOnlyChangedFiles(this.shouldCommentOnlyChangedFiles) //
           .withKeepOldComments(this.keepOldComments) //
+          .withCreateCommentTasks(this.createCommentTasks) //
           .withCommentTemplate(this.commentTemplate) //
           .withMaxNumberOfViolations(this.maxNumberOfViolations) //
           .withViolationsLogger(
@@ -267,6 +276,8 @@ public class Runner {
         + this.minSeverity
         + ", keepOldComments="
         + this.keepOldComments
+        + ", createCommentTasks="
+        + this.createCommentTasks
         + ", commentTemplate="
         + this.commentTemplate
         + ", pullRequestId="
