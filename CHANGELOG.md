@@ -1,3 +1,13 @@
+## 1.38.1 (2026-10-03)
+
+### Bug Fixes
+
+-  remove literal quotes from gradle.properties description ([1a8f7](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/1a8f7f1a1e9f9bc) Tomas Bjerre)  
+
+### Dependency updates
+
+- update plugin se.bjurr.gradle.bundle-command-shadow to v2.4.1 (#20) ([f709b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/f709b7786adb5b4) renovate[bot])  
+- update dependency se.bjurr.violations:violations-lib to v3.0.2 (#21) ([11ce7](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/11ce7506660e378) renovate[bot])  
 ## 1.37.1 (2026-09-14)
 
 ### Bug Fixes
