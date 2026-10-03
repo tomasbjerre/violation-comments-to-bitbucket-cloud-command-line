@@ -7,12 +7,10 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
-import java.util.stream.Collectors;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -160,9 +158,7 @@ public class Runner {
     if (this.showDebugInfo) {
       System.out.println( // NOPMD stdout is the CLI output
           "Given parameters:\n"
-              + Arrays.asList(args).stream()
-                  .map((it) -> it.toString())
-                  .collect(Collectors.joining(", "))
+              + String.join(", ", args)
               + "\n\nParsed parameters:\n"
               + this.toString());
     }
