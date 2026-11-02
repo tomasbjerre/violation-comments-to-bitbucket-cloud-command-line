@@ -1,3 +1,11 @@
+## 1.38.2 (2026-10-28)
+
+### Dependency updates
+
+- update dependency se.bjurr.violations:violations-lib to v3.0.3 (#26) ([897a9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/897a91ba2197d85) renovate[bot])  
+- update dependency gradle to v9.8.2 (#25) ([a848a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/a848a0099aee721) renovate[bot])  
+- update dependency gradle to v9.8.1 (#24) ([2e57b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/2e57b17455a616c) renovate[bot])  
+- update dependency se.bjurr.violations:violation-comments-to-bitbucket-cloud-lib to v2.2.2 (#22) ([26e1f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-cloud-command-line/commit/26e1faf02a480b8) renovate[bot])  
 ## 1.38.1 (2026-10-03)
 
 ### Bug Fixes
